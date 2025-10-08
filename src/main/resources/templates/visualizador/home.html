@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>MetaMap - Home</title>
+    <!-- CSS global -->
+    <link rel="stylesheet" th:href="@{/visualizador/static/css/home.css}" />
+    <!-- FontAwesome si lo usás -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- HEADER -->
+<div th:replace="static/header :: header"></div>
+<section class="portada" aria-labelledby="sobre-nosotros">
+    <div class="contenedor portada-interior">
+        <h1 id="sobre-nosotros">Sobre Nosotros...</h1>
+        <p class="descripcion">
+            MetaMapa es un sistema de código abierto desarrollado por una ONG para recopilar, visibilizar y mapear
+            información multimedia georreferenciada y temporal; permite a ONGs, universidades y organismos desplegar
+            instancias propias, combinar fuentes estáticas con aportes colaborativos, almacenar datos de forma
+            descentralizada y usar herramientas de etiquetado para facilitar la verificación, priorizando la privacidad (no
+            rastreamos a quienes consultan) y la protección de los informantes.
+        </p>
+    </div>
+</section>
+
+<main>
+    <section class="colecciones noticias" aria-labelledby="titulo-noticias">
+        <div class="contenedor">
+            <h2 id="titulo-noticias">Hechos Destacados</h2>
+
+            <div class="envoltura-tarjetas" aria-label="Noticias destacadas">
+                <button class="flecha-carousel izquierda" aria-label="Anterior">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                </button>
+
+                <div class="tarjetas" id="tarjetas">
+                    <article class="tarjeta" itemscope itemtype="http://schema.org/NewsArticle" aria-labelledby="t1">
+                        <a th:href="@{/hecho}">
+                            <img src="https://picsum.photos/seed/n1/400/260" alt="Acuerdo económico" loading="lazy" itemprop="image"/>
+                        </a>
+                        <div class="cuerpo-tarjeta">
+                            <p class="meta">
+                                <span class="categoria" itemprop="articleSection">Economía</span>
+                                <time datetime="2025-09-03" itemprop="datePublished">03/09/2025</time>
+                            </p>
+                            <h3 id="t1" itemprop="headline">Nuevo acuerdo económico en la región</h3>
+                            <p class="descripcion" itemprop="description">
+                                Líderes regionales firmaron un tratado para fomentar el comercio y reducir aranceles en el bloque.
+                            </p>
+                            <p class="meta-dos">
+                                <strong>Fuente:</strong>
+                                <span itemprop="publisher">La Nación</span> ·
+                                <span class="lugar">Buenos Aires, Argentina</span>
+                            </p>
+                            <div class="etiquetas">
+                                <span>#Comercio</span><span>#Acuerdo</span><span>#LatAm</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Repetir los demás artículos con th:href según corresponda -->
+                </div>
+
+                <button class="flecha-carousel derecha" aria-label="Siguiente">
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
+            </div>
+
+            <hr class="separador" aria-hidden="true" />
+
+            <h2 id="titulo-colecciones">Colecciones Destacadas</h2>
+
+            <div class="envoltura-tarjetas colecciones" aria-label="Colecciones destacadas">
+                <button class="flecha-carousel izquierda colecciones-izquierda" aria-label="Anterior colecciones">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                </button>
+
+                <div class="tarjetas" id="tarjetas-colecciones">
+                    <article class="tarjeta tarjeta-coleccion" aria-labelledby="c1">
+                        <img src="https://picsum.photos/seed/c1/400/260" alt="Coalición económica" loading="lazy"/>
+                        <div class="cuerpo-tarjeta">
+                            <p class="meta"><span class="categoria">Economía</span></p>
+                            <h3 id="c1">Colección: Integración Comercial Regional</h3>
+                            <p class="descripcion">
+                                Agrupa hechos sobre acuerdos comerciales, tratados y decisiones arancelarias que afectan a la región.
+                            </p>
+                            <p class="meta-dos">
+                                <strong>Fuentes:</strong> 6 · <strong>Hechos:</strong> 18
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Repetir los demás artículos de colecciones -->
+                </div>
+
+                <button class="flecha-carousel derecha colecciones-derecha" aria-label="Siguiente colecciones">
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<div th:replace="static/footer :: footer"></div>
+
+</body>
+</html>
+</body>
+</html>

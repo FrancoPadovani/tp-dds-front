@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="header" class="encabezado-sitio" role="banner">
+    <div class="contenedor encabezado-interior">
+        <a class="marca pointer" th:href="@{/}" aria-label="MetaMap Home">
+            <span class="caja-marca">MetaMap</span>
+        </a>
+
+        <nav class="nav-principal" role="navigation" aria-label="Menú principal">
+            <ul>
+                <li class="nav-con-iconos">
+                    <a th:href="@{/hechos}" title="Hechos"><i class="icon fas fa-book"></i></a>
+                </li>
+                <li class="nav-con-iconos">
+                    <a th:href="@{/colecciones}" title="Colecciones"><i class="icon fas fa-th-large"></i></a>
+                </li>
+                <li class="nav-con-iconos">
+                    <a class="btn-iniciar" th:href="@{/iniciar_sesion}" title="Iniciar Sesión"><i class="icon fas fa-user"></i></a>
+                </li>
+                <li class="nav-con-texto"><a th:href="@{/hechos}">Hechos</a></li>
+                <li class="nav-con-texto"><a th:href="@{/colecciones}">Colecciones</a></li>
+                <li class="nav-con-texto"><a class="btn-iniciar" th:href="@{/iniciar_sesion}">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+</body>
+</html>
